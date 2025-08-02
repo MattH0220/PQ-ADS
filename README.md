@@ -1,11 +1,16 @@
 # PQ-ADS
 
-<center>
-  <img width="300" height="175" alt="image" src="https://github.com/user-attachments/assets/ce62e537-46a1-46be-bcda-629fac5a99c6" />
-</center>
-
 ## Overview
 The PQ-ADS project focuses on the design, development, and testing of a compact Antenna Deployment System (ADS) for the SUNQube-1, a student-built PocketQube satellite developed at Stellenbosch University. PocketQubes are a class of pico-satellites, typically measuring 5x5x5 cm per unit (1P), designed to provide cost-effective access to space for small institutions. The ADS integrates a half-wavelength dipole antenna, a reliable deployment mechanism, and a deployment detection subsystem onto a single custom PCB, adhering to the stringent PQ9 standard size constraints. The system ensures reliable telemetry, tracking, and command (TT&C) communication for the SUNQube-1 mission while being adaptable for future PocketQube missions. The ADS demonstrated successful deployment and data transmission.
+
+
+<table align="center">
+  <tr>
+    <td>
+      <img width="400" height="240" alt="image" src="https://github.com/user-attachments/assets/ce62e537-46a1-46be-bcda-629fac5a99c6" />
+    </td>
+  </tr>
+</table>
 
 ## Objective
 The primary objective of the PQ-ADS project was to design and develop a compact, reliable Antenna Deployment System (ADS) for the SUNQube-1 PocketQube satellite mission, ensuring compliance with the PQ9 standard. The project aimed to integrate a half-wavelength dipole antenna, a deployment mechanism, and a deployment detection subsystem onto a single PCB, optimizing for size, reliability, and functionality. Key goals included achieving efficient RF performance through impedance matching, ensuring reliable antenna deployment in orbit, and validating the system’s ability to transmit TT&C data packets, creating a versatile solution for future PocketQube missions.
@@ -21,14 +26,14 @@ The primary objective of the PQ-ADS project was to design and develop a compact,
 - Project management and documentation for a complex engineering project.
 
 ### Tools Used
-- CAD software for mechanical design of the antenna deployment mechanism.
-- KiCAD for PCB design and layout of the ADS.
-- Vector Network Analyzer (VNA) for RF testing and impedance matching validation.
-- Multimeter and thermocouple for thermal testing of the burn resistor.
-- ESP32 microcontroller for deployment control and detection testing.
+- OnShape CAD software.
+- KiCAD for PCB design and layout.
+- Vector Network Analyzer (VNA).
+- Multimeter and thermocouple.
+- ESP32 microcontroller.
 - ST-Link dongle and UART-to-serial dongle for programming and debugging the TT&C radio board.
-- Termite software for serial terminal debugging.
-- Benchtop power supplies for electrical and deployment testing.
+- Termite software.
+- Benchtop power supplies.
 
 ## Steps
 1. **Literature Study and Requirements Definition**  
