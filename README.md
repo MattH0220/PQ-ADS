@@ -36,38 +36,71 @@ The primary objective of the PQ-ADS project was to design and develop a compact,
 - Benchtop power supplies.
 
 ## Steps
-1. **Literature Study and Requirements Definition**  
-   Conducted a comprehensive review of PocketQube satellites and existing antenna deployment systems to establish design requirements. Defined specifications for the ADS, including PQ9 standard compliance (42x42 mm PCB), reliable deployment, and efficient RF performance for TT&C communication.  
-   ![Literature Study Placeholder](https://via.placeholder.com/600x400?text=Insert+Literature+Study+Image)
+1. **RF Design and Antenna Configuration**  
+   Selected UHF (433 MHz) for smaller antenna size and reduced interference. Designed a half-wavelength dipole antenna with an L-network for impedance matching to achieve a 50Ω target impedance, minimizing reflection losses. I used a smith chart to determine the L and C values that would transform the dipole antennas 73Ω to the desired 50Ω.
 
-2. **System Design Overview**  
-   Developed a high-level design of the SUNQube-1 communication system, focusing on the ADS’s role in enabling bidirectional data relay. Designed subsystems including a half-wavelength dipole antenna, deployment mechanism, and detection system, ensuring integration with the satellite’s On-Board Computer (OBC) and Electrical Power System (EPS).  
-   ![System Design Placeholder](https://via.placeholder.com/600x400?text=Insert+System+Design+Image)
+<table align="center">
+  <tr>
+    <td>
+      <img width="564" height="219" alt="image" src="https://github.com/user-attachments/assets/08889754-fbac-42ba-8ff7-b959ae0d0ca5" />
+    </td>
+  </tr>
+</table>
 
-3. **RF Design and Antenna Configuration**  
-   Selected UHF (433 MHz) for smaller antenna size and reduced interference. Designed a half-wavelength dipole antenna with an L-network for impedance matching to achieve a 50Ω target, minimizing reflection losses. Addressed challenges of feeding a balanced antenna with an unbalanced coaxial cable.  
-   ![RF Design Placeholder](https://via.placeholder.com/600x400?text=Insert+RF+Design+Image)
 
-4. **Mechanical Design of Deployment Mechanism**  
-   Designed a compact deployment mechanism using a burn-wire and thermal knife system with a coiled antenna storage system. Incorporated a 3D-printed mounting block and conductive copper tape for electrical connections, ensuring compliance with PQ9 size constraints and LEO environmental challenges.  
-   ![Mechanical Design Placeholder](https://via.placeholder.com/600x400?text=Insert+Mechanical+Design+Image)
+2. **Mechanical Design of Deployment Mechanism**  
+   Designed a compact deployment mechanism using a burn-wire and thermal knife system with a coiled antenna storage system. Incorporated a 3D-printed mounting block and conductive copper tape for electrical connection of the antenna elements, ensuring compliance with PQ9 size constraints and LEO environmental challenges.  
+   
+<table align="center">
+  <tr>
+    <td>
+      <img width="693" height="219" alt="image" src="https://github.com/user-attachments/assets/037d8f8c-effe-4ec5-a8b5-ca5b9da4ec8a" />
+    </td>
+  </tr>
+</table>
 
-5. **Electrical Design and Deployment Detection**  
-   Developed the electrical subsystem, including a burn subsystem powered by a 5V EPS supply and a deployment detection subsystem using a GP2S700HCP reflective photointerrupter. Integrated a comparator circuit to convert analog sensor signals to digital for OBC interfacing, optimizing power efficiency.  
-   ![Electrical Design Placeholder](https://via.placeholder.com/600x400?text=Insert+Electrical+Design+Image)
 
-6. **Prototype Development and Integration**  
-   Built a Minimum Viable Product (MVP) to test mechanical functionality, identifying and resolving a clearance issue in the burn-wire attachment. Integrated all subsystems onto a single PCB, optimizing component placement for signal integrity and structural stability.  
-   ![Prototype Placeholder](https://via.placeholder.com/600x400?text=Insert+Prototype+Image)
+3. **Electrical Design and Deployment Detection**  
+   Developed the electrical subsystem, including a burn subsystem powered by a 5V supply (that required a logic level shifting circuit, to allow the 3.3v OBC signal to switch the 5V), a deployment detection subsystem using a GP2S700HCP reflective photointerrupter, which I positioed in a cutout in the antenna deployment door as shown in the 3D render below. The deployment detection circuit is used to cut power to the burn resistor once successful deployment has occured, saving power. I also integrated a comparator circuit to convert the analog signals from the GP2S700HCP to digital for OBC interfacing.  
+   
+<table align="center">
+  <tr>
+    <td>
+      <img width="823" height="219" alt="image" src="https://github.com/user-attachments/assets/f1b177b9-e1d0-4ce0-ac5a-62cb23ef5c62" />
+    </td>
+  </tr>
+</table>
 
-7. **Testing and Validation**  
-   Conducted extensive testing, including thermal tests on the burn resistor (achieving wire cutting at 87°C), deployment tests to verify mechanical reliability, and RF tests to measure impedance, VSWR, and S11 parameters. Compared matched and unmatched antenna performance, confirming the matched antenna’s superior results (VSWR of 1.2001 and return loss of -20.67 dB).  
-   ![Testing Placeholder](https://via.placeholder.com/600x400?text=Insert+Testing+Image)
 
-8. **Full System Functional Test**  
+4. **Subsystem Integration and PCB Design**  
+   Integrated all subsystems onto a single PCB, optimizing component placement for signal integrity and structural stability. The figure below illustrates the fuller assembled top and bottom view of the PCB.  
+<table align="center">
+  <tr>
+    <td>
+      <img width="712" height="218" alt="image" src="https://github.com/user-attachments/assets/fef0e2b5-af86-4704-b6a5-91c4b5a201f1" />
+    </td>
+  </tr>
+</table>
+
+5. **Testing and Validation**  
+   Conducted extensive testing, including deployment tests to verify mechanical reliability, and RF tests to measure impedance, VSWR, and S11 parameters. Compared matched and unmatched antenna performance, confirming the matched antenna’s results (VSWR of 1.2001 and return loss of -20.67 dB).  
+<table align="center">
+  <tr>
+    <td>
+      <img width="690" height="254" alt="image" src="https://github.com/user-attachments/assets/f2d08d21-c9a7-4502-82c7-c278c87ff803" />
+    </td>
+  </tr>
+</table>
+
+6. **Full System Functional Test**  
    Performed a full system test with the TT&C radio board using an SX1278 transceiver configured for GFSK modulation. Validated data packet transmission against a commercial monopole antenna, confirming the matched antenna’s comparable or superior performance.  
-   ![Full System Test Placeholder](https://via.placeholder.com/600x400?text=Insert+Full+System+Test+Image)
+   
+<table align="center">
+  <tr>
+    <td>
+      <img width="663" height="124" alt="image" src="https://github.com/user-attachments/assets/2eccbb3b-2ae7-44ea-8a05-0a78d8c4bf81" />
+    </td>
+  </tr>
+</table>
 
-9. **Documentation and Future Work**  
-   Documented the design, testing, and results in a comprehensive thesis, proposing a balun to address RF ground plane resonance issues. Suggested future enhancements, such as advanced antenna technologies and further miniaturization, for broader PocketQube applications.  
-   ![Documentation Placeholder](https://via.placeholder.com/600x400?text=Insert+Documentation+Image)
+
