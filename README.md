@@ -92,6 +92,14 @@ The primary objective of the PQ-ADS project was to design and develop a compact,
   </tr>
 </table>
 
+<table align="center">
+  <tr>
+    <td>
+      <img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/513347e3-5cc4-4826-a256-469558c234f0" />
+    </td>
+  </tr>
+</table>
+
 6. **Full System Functional Test**  
    Performed a full system test with the TT&C radio board using an SX1278 transceiver configured for GFSK modulation. Validated data packet transmission against a commercial monopole antenna, confirming the matched antenna’s comparable or superior performance.  
    
